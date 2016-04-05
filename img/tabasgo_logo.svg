@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="349.62601mm"
+   height="125.71618mm"
+   viewBox="0 0 1238.8322 445.45102"
+   id="svg4256"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tabasgo_logo.svg">
+  <defs
+     id="defs4258" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.0074354"
+     inkscape:cx="593.16225"
+     inkscape:cy="175.90108"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="20"
+     fit-margin-left="20"
+     fit-margin-right="20"
+     fit-margin-bottom="20"
+     showguides="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4278" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4261">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(245.13032,-38.208118)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path2436"
+       style="fill:#f03c36;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       d="m 354.40985,109.07426 c 4.82857,0 8.76325,3.83768 8.76325,8.54723 0,4.70954 -3.93468,8.54723 -8.76325,8.54723 -4.82859,0 -8.76326,-3.83769 -8.76326,-8.54723 0,-4.70955 3.93467,-8.54723 8.76326,-8.54723 z m 163.49154,7.7648 c -36.51228,3.36821 -73.07039,5.74535 -111.08776,5.8273 -10.91779,0.35769 -14.86008,-2.66773 -14.86008,-5.91673 0,-3.24153 3.21648,-6.31168 14.86008,-5.90929 37.03179,0.0239 74.06359,2.243 111.08776,5.99872 z M 190.6891,116.66021 c 36.50464,-3.36823 73.07038,-5.74535 111.08775,-5.82732 10.9178,-0.35053 14.86009,2.67521 14.86009,5.91674 0,0 0,0 0,0 0,3.24154 -3.21649,6.31169 -14.86009,5.91673 -37.0318,-0.0298 -74.06359,-2.25043 -111.08775,-6.00615" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:38.65277481px;line-height:168.99996996%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#01874f;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-171.6447"
+       y="348.61893"
+       id="text3358"
+       sodipodi:linespacing="168.99997%"
+       transform="scale(1.054202,0.9485848)"><tspan
+         sodipodi:role="line"
+         id="tspan3360"
+         x="-171.6447"
+         y="348.61893"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:301.97479248px;line-height:168.99996996%;font-family:'Tw Cen MT Condensed Extra Bold';-inkscape-font-specification:'Tw Cen MT Condensed Extra Bold, ';fill:#01874f;fill-opacity:1">TABASGO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f03c36;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="83.348557"
+       y="425.34961"
+       id="text4211"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4213"
+         x="83.348557"
+         y="425.34961"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90px;font-family:'Tw Cen MT Condensed';-inkscape-font-specification:'Tw Cen MT Condensed, Bold';fill:#f03c36;fill-opacity:1">HOT STONE SAUCE</tspan></text>
+  </g>
+</svg>
