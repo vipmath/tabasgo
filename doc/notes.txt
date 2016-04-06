@@ -1,0 +1,40 @@
+To speak about the basics you should do a gtp engine as explained here http://senseis.xmp.net/?TesujiGoFramework%2FGoTextProtocol (I saw an engine which don't do and it's a painful experience)
+
+next you chose a board representation
+http://senseis.xmp.net/?TesujiGoFramework%2FBoardRepresentation
+
+next you has to implement an engine which generate a random legal move
+
+next you can do a more clever engine as a monte carlo one  using UCT as explained here
+http://senseis.xmp.net/?UCT
+
+next you can do something more clever, but it is further than where is my bot
+
+a good explanation about modern implementing go software is here http://pasky.or.cz/go/prace.pdf
+
+it is based on pachi a free software engine which can be found here http://pachi.or.cz/
+
+(it is in c but can give you good ideas)
+
+
+--------
+
+  The bare minimum of course is two bits per point. Usually, an extra
+edge frame (or half-frame) is added so that you do not have to
+special-case border areas.
+
+  Then again, for efficient implementation, you will also need at least
+some representation of stone chains and chain membership information
+for each point. For each chain, you will want to keep at least
+approximate number of liberties and fast way to get liberties of
+low-liberty chains (at least the last two libs). You will need to be
+able to quickly iterate over all points belonging to a chain (for
+captures), e.g. by having another "next-stone-in-chain" information
+per point.
+
+  You may also want to maintain queue of free positions for random move
+selection, and some extra cached data (e.g. I cache number of neighbors
+of various colors).
+
+  Then, you'll need to guard against superko by having a hash code per
+point+color and hash map of encountered positions.
