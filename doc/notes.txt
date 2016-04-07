@@ -19,6 +19,11 @@ it is based on pachi a free software engine which can be found here http://pachi
 
 --------
 
+rules : http://www.weddslist.com/kgs/past/superko.html
+chinese with PSK (positional superko)
+
+--------
+
   The bare minimum of course is two bits per point. Usually, an extra
 edge frame (or half-frame) is added so that you do not have to
 special-case border areas.
