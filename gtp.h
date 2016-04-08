@@ -16,13 +16,11 @@
   along with TabasGo.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <iostream>
-#include "gtp.h"
+#ifndef TABASGO_GTP_H
+#define TABASGO_GTP_H
 
-using namespace std;
+namespace GTP {
+    void loop(int argc, char* argv[]);
+} // namespace GTP
 
-int main(int argc, char* argv[]) {
-    cout << "Hello, World!" << endl;
-    GTP::loop(argc, argv);
-    return 0;
-}
+#endif //TABASGO_GTP_H
