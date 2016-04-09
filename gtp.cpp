@@ -76,6 +76,10 @@ namespace GTP{
             //TODO clear the board
             cout<<"="<<id<<endl<<endl;
         }
+        if(name=="komi") {
+            //TODO update komi
+            cout<<"="<<id<<endl<<endl;
+        }
     }
 
     void loop(int argc, char* argv[]) {
