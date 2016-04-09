@@ -34,11 +34,8 @@ void GTP::loop(int argc, char* argv[]) {
             cmd = "quit";
 
         //Remove all occurences of CR and other control characters except for HT and LF.
-        for(char cc=0; cc < 32; cc++) {
-            if(cc!=9 && cc!=10)
-                cmd.erase(std::remove(cmd.begin(), cmd.end(), cc), cmd.end());
-        }
-        cmd.erase(std::remove(cmd.begin(), cmd.end(), 127), cmd.end());
+        auto filter = [] (char cc) { return (cc<32 && cc!=9 && cc!=10) || cc==127; };
+        cmd.erase(std::remove_if(cmd.begin(), cmd.end(), filter), cmd.end());
 
         //For each line with a hash sign (#), remove all text following and including this character.
         cmd=cmd.substr(0, cmd.find("#"));
