@@ -24,8 +24,8 @@
 
 using namespace std;
 
-#define gtp_known_commands  "protocol_version|name|version|known_command|list_commands\
-|quit|boardsize|clear_board|komi|play|genmove"
+#define gtp_known_commands "boardsize|clear_board|genmove|known_command|komi|\
+list_commands|name|play|protocol_version|quit|version"
 
 namespace GTP{
 
