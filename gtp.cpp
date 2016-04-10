@@ -30,7 +30,7 @@ using namespace std;
 namespace GTP{
 
     string get_string_arg(string id, string args){
-        regex r(" ?([[:alnum:]]+)");
+        regex r("([[:alnum:]]+)");
         smatch match;
         if(regex_match(args,match,r)) return match[1];
         else {
@@ -41,11 +41,11 @@ namespace GTP{
 
     void process_command(string id, string name, string args){
         //cout<<"#processing command id["<<id<<"] name ["<<name<<"] args ["<<args<<"]"<<endl;
-        if(id.empty()) id=" ";
+        //if(id.empty()) id=" ";
 
-        if(name=="protocol_version") cout<<"="<<id<<"2"<<endl<<endl;
-        if(name=="name") cout<<"="<<id<<"tabasgo"<<endl<<endl;
-        if(name=="version") cout<<"="<<id<<"0.1"
+        if(name=="protocol_version") cout<<"="<<id<<" "<<"2"<<endl<<endl;
+        if(name=="name") cout<<"="<<id<<" "<<"tabasgo"<<endl<<endl;
+        if(name=="version") cout<<"="<<id<<" "<<"0.1"
                     #ifdef __GNUC__
                     " "
                     __DATE__
@@ -55,13 +55,13 @@ namespace GTP{
                     <<endl<<endl;
         if(name=="known_command"){
             string command=get_string_arg(id, args), list=gtp_known_commands;
-            if(!command.empty()) cout<<"="<<id<<string((list.find(command)!= std::string::npos)?"true":"false")<<endl<<endl;
+            if(!command.empty()) cout<<"="<<id<<" "<<string((list.find(command)!= std::string::npos)?"true":"false")<<endl<<endl;
         }
         if(name=="list_commands"){
             string list=gtp_known_commands;
             regex re("[|]+");
             sregex_token_iterator it(list.begin(), list.end(), re, -1), reg_end;
-            cout<<"="<<id;
+            cout<<"="<<id<<" ";
             for (; it != reg_end; ++it) {
                 cout << it->str() << endl;
             }
@@ -105,12 +105,13 @@ namespace GTP{
             if(cmd.find_first_not_of(' ') != std::string::npos)
             {
                 regex r(
-                        "([[:digit:]]+ )?("
+                        "([[:digit:]]+)? ?("
                         gtp_known_commands
-                        ")( .*)?"
+                        ") ?(.*)?"
                 );
                 smatch match;
                 if(regex_match(cmd,match,r)){
+                    //cout<<"["<<match[1]<<"]"<<"["<<match[2]<<"]"<<"["<<match[3]<<"]"<<endl;
                     process_command(match[1], match[2], match[3]);
                     quit=(match[2]=="quit");
                 }
