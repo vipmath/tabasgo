@@ -11,7 +11,7 @@ if(MINGW)
 endif()
 
 ## Boost
-find_package( Boost 1.60 COMPONENTS program_options REQUIRED )
+find_package( Boost 1.58 COMPONENTS program_options REQUIRED )
 include_directories( ${Boost_INCLUDE_DIR} )
 
 set(SOURCE_FILES main.cpp gtp.h gtp.cpp board.cpp board.h)
