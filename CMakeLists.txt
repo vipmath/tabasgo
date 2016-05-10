@@ -8,5 +8,5 @@ if(MINGW)
     set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc -static-libstdc++ -s")
 endif()
 
-set(SOURCE_FILES main.cpp gtp.h gtp.cpp)
+set(SOURCE_FILES main.cpp gtp.h gtp.cpp board.cpp board.h)
 add_executable(tabasgo ${SOURCE_FILES})
