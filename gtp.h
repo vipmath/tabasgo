@@ -22,7 +22,7 @@
 #include <string>
 
 namespace GTP {
-    void loop(int argc, char* argv[]);
+    void loop(std::string cmd);
     std::string version();
 } // namespace GTP
 

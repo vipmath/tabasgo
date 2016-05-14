@@ -17,6 +17,8 @@
 */
 
 #include <iostream>
+#include <fstream>
+#include <iterator>
 #include <boost/program_options.hpp>
 #include "gtp.h"
 
@@ -25,20 +27,44 @@ namespace po = boost::program_options;
 
 int main(int ac, char* av[]) {
 
+    typedef vector<string> string_vector;
+    string gtp_command;
+
     try {
-        // Declare the supported options.
-        po::options_description desc("Allowed options");
-        desc.add_options()
+        // Declare a group of options that will be
+        // allowed only on command line
+        po::options_description generic("Generic options");
+        generic.add_options()
                 ("help", "produce help message")
                 ("version", "display version number")
-                ("compression", po::value<int>(), "set compression level");
+                ("gtp,G",  po::value<string>(),  "GTP command to parse")
+                //("compression", po::value<int>(), "set compression level")
+                ;
+
+        // Declare a group of options that will be
+        // allowed both on command line and in
+        // config file
+        po::options_description config("Configuration");
+        config.add_options()
+                ("optimization", po::value<int>(),
+                 "optimization level")
+                ("include-path,I",
+                 po::value< vector<string_vector> >()->composing(),
+                 "include path")
+                ;
+
+        po::options_description cmdline_options;
+        cmdline_options.add(generic).add(config);
+
+        po::options_description config_file_options;
+        config_file_options.add(config);
 
         po::variables_map vm;
-        po::store(po::parse_command_line(ac, av, desc), vm);
+        po::store(po::parse_command_line(ac, av, cmdline_options), vm);
         po::notify(vm);
 
         if (vm.count("help")) {
-            cout << desc << "\n";
+            cout << cmdline_options << "\n";
             return 1;
         }
 
@@ -47,19 +73,24 @@ int main(int ac, char* av[]) {
             return 1;
         }
 
+        if (vm.count("gtp")) {
+            gtp_command=vm["gtp"].as<string>();
+            gtp_command+=" ";
+        }
+
+        /*
         if (vm.count("compression")) {
             cout << "Compression level was set to "
             << vm["compression"].as<int>() << ".\n";
         } else {
             cout << "Compression level was not set.\n";
-        }
+        }*/
     }
     catch (const po::error &ex)
     {
         std::cerr << ex.what() << std::endl;
     }
 
-
-    GTP::loop(ac, av);
+    GTP::loop(gtp_command);
     return 0;
 }

@@ -89,15 +89,15 @@ namespace GTP{
         }
     }
 
-    void loop(int argc, char* argv[]) {
-        string cmd;
+    void loop(string single_cmd) {
+        string cmd=single_cmd;
         bool quit=false;
 
-        for (int i = 1; i < argc; ++i)
-            cmd += std::string(argv[i]) + " ";
+        //for (int i = 1; i < argc; ++i)
+        //    cmd += std::string(argv[i]) + " ";
 
         do {
-            if (argc == 1 && !getline(cin, cmd)) // Block here waiting for input or EOF
+            if (single_cmd.empty() && !getline(cin, cmd)) // Block here waiting for input or EOF
                 cmd = "quit";
 
             //Remove all occurences of CR and other control characters except for HT and LF.
@@ -132,7 +132,7 @@ namespace GTP{
                     cout<<" error: invalid input ["<<cmd<<"]"<<endl;
                 }
             }
-        } while (!quit && argc == 1); // Passed args have one-shot behaviour
+        } while (!quit && single_cmd.empty()); // Passed args have one-shot behaviour
     }
 
 } // namespace GTP
