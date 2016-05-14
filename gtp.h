@@ -19,8 +19,11 @@
 #ifndef TABASGO_GTP_H
 #define TABASGO_GTP_H
 
+#include <string>
+
 namespace GTP {
     void loop(int argc, char* argv[]);
+    std::string version();
 } // namespace GTP
 
 #endif //TABASGO_GTP_H

@@ -29,6 +29,20 @@ list_commands|name|play|protocol_version|quit|version"
 
 namespace GTP{
 
+    string version()
+    {
+        stringstream ss;
+        ss<<"0.1"
+            #ifdef __GNUC__
+                            " "
+                            __DATE__
+                            " "
+                            __TIME__
+            #endif
+            ;
+        return ss.str();
+    }
+
     string get_string_arg(string id, string args){
         regex r("([[:alnum:]]+)");
         smatch match;
@@ -45,14 +59,7 @@ namespace GTP{
 
         if(name=="protocol_version") cout<<"="<<id<<" "<<"2"<<endl<<endl;
         if(name=="name") cout<<"="<<id<<" "<<"tabasgo"<<endl<<endl;
-        if(name=="version") cout<<"="<<id<<" "<<"0.1"
-                    #ifdef __GNUC__
-                    " "
-                    __DATE__
-                    " "
-                    __TIME__
-                    #endif
-                    <<endl<<endl;
+        if(name=="version") cout<<"="<<id<<" "<<version()<<endl<<endl;
         if(name=="known_command"){
             string command=get_string_arg(id, args), list=gtp_known_commands;
             if(!command.empty()) cout<<"="<<id<<" "<<string((list.find(command)!= std::string::npos)?"true":"false")<<endl<<endl;
