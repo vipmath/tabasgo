@@ -21,6 +21,7 @@
 #include <regex>
 #include <string>
 #include "gtp.h"
+#include "board.h"
 
 using namespace std;
 
@@ -53,6 +54,16 @@ namespace GTP{
         }
     }
 
+    int get_int_arg(string id, string args){
+        regex r("([[:digit:]]+)");
+        smatch match;
+        if(regex_match(args,match,r)) return std::stoi(match[1]);
+        else {
+            cout<<"?"<<id<<"arguments error ["<<args<<"]"<<endl;
+            return 0;
+        }
+    }
+
     void process_command(string id, string name, string args){
         //cout<<"#processing command id["<<id<<"] name ["<<name<<"] args ["<<args<<"]"<<endl;
         //if(id.empty()) id=" ";
@@ -76,8 +87,13 @@ namespace GTP{
         }
         if(name=="quit") cout<<"="<<id<<endl<<endl;
         if(name=="boardsize") {
-            //TODO update board size
-            cout<<"="<<id<<endl<<endl;
+            int size=get_int_arg(id, args);
+            if(size>=3 && size<=MAX_BOARD_SIZE)
+            {
+                //TODO update board size
+                cout<<"="<<id<<endl<<endl;
+            }
+            else cout<<"?"<<id<<" invalid board size ["<<size<<"], it should be >=3 and <="<<MAX_BOARD_SIZE<<endl<<endl;
         }
         if(name=="clear_board") {
             //TODO clear the board

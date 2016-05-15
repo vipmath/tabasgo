@@ -21,10 +21,12 @@
 
 #include <cstdint>
 
+#define MAX_BOARD_SIZE 19
+
 class Board {
 
 private:
-    uint8_t board[];
+    uint8_t board[(MAX_BOARD_SIZE+1)*(MAX_BOARD_SIZE+2)];
 };
 
 
