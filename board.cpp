@@ -16,7 +16,10 @@
   along with TabasGo.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <iostream>
 #include "board.h"
+
+using namespace std;
 
 Board position;
 
@@ -28,5 +31,18 @@ bool Board::setSize(unsigned int size)
 
 void Board::clear()
 {
-    for(uint8_t &i : board) i=0;
+    for(uint8_t &i : board) i=border;
+    for(int raw=0; raw<size; raw++)
+        for(int col=0; col<size; col++)
+            board[vertice(col,raw)]=empty;
+}
+
+void Board::show()
+{
+    for(int i=0; i<MAX_ARRAY_SIZE; i++)
+    {
+        if(!(i%20)) cout<<"|"<<endl;
+        cout<<(int)board[i]<<" ";
+
+    }
 }

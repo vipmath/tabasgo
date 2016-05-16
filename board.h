@@ -24,6 +24,7 @@
 #define MAX_BOARD_SIZE 19
 #define MAX_ARRAY_SIZE (MAX_BOARD_SIZE+1)*(MAX_BOARD_SIZE+2)
 
+
 class Board {
 
 public:
@@ -34,10 +35,14 @@ public:
 
     bool setSize(unsigned int size);
     void clear();
+    void show();
+
+    inline static int vertice(const int column, const int raw) { return(column+(raw+1)*(MAX_BOARD_SIZE+1)); }
 
 private:
     uint8_t board[MAX_ARRAY_SIZE];
     unsigned int size;
+    static const uint8_t empty=0, black=1, white=2, border=3;
 };
 
 extern Board position;

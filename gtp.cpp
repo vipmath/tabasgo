@@ -26,7 +26,7 @@
 using namespace std;
 
 #define gtp_known_commands "boardsize|clear_board|genmove|known_command|komi|\
-list_commands|name|play|protocol_version|quit|version"
+list_commands|name|play|protocol_version|quit|showboard|version"
 
 namespace GTP{
 
@@ -92,11 +92,15 @@ namespace GTP{
             else cout<<"?"<<id<<" invalid board size ["<<size<<"], it should be >=3 and <="<<MAX_BOARD_SIZE<<endl<<endl;
         }
         if(name=="clear_board") {
-            //TODO clear the board
+            position.clear();
             cout<<"="<<id<<endl<<endl;
         }
         if(name=="komi") {
             //TODO update komi
+            cout<<"="<<id<<endl<<endl;
+        }
+        if(name=="showboard") {
+            position.show();
             cout<<"="<<id<<endl<<endl;
         }
     }
