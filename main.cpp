@@ -46,8 +46,7 @@ int main(int ac, char* av[]) {
         // config file
         po::options_description config("Configuration");
         config.add_options()
-                ("optimization", po::value<int>(),
-                 "optimization level")
+                ("threads,T", po::value<int>(), "number of threads to use")
                 ("include-path,I",
                  po::value< vector<string_vector> >()->composing(),
                  "include path")
@@ -78,13 +77,9 @@ int main(int ac, char* av[]) {
             gtp_command+=" ";
         }
 
-        /*
-        if (vm.count("compression")) {
-            cout << "Compression level was set to "
-            << vm["compression"].as<int>() << ".\n";
-        } else {
-            cout << "Compression level was not set.\n";
-        }*/
+        if (vm.count("threads")) {
+            cout << "Using "<< vm["threads"].as<int>() << " threads." << endl;
+        }
     }
     catch (const po::error &ex)
     {

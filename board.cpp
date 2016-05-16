@@ -17,3 +17,16 @@
 */
 
 #include "board.h"
+
+Board position;
+
+bool Board::setSize(unsigned int size)
+{
+    if(size>=3 && size<=MAX_BOARD_SIZE) { this->size=size; return true; }
+    else return false;
+}
+
+void Board::clear()
+{
+    for(uint8_t &i : board) i=0;
+}

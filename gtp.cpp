@@ -88,11 +88,7 @@ namespace GTP{
         if(name=="quit") cout<<"="<<id<<endl<<endl;
         if(name=="boardsize") {
             int size=get_int_arg(id, args);
-            if(size>=3 && size<=MAX_BOARD_SIZE)
-            {
-                //TODO update board size
-                cout<<"="<<id<<endl<<endl;
-            }
+            if(position.setSize(size)) cout<<"="<<id<<endl<<endl;
             else cout<<"?"<<id<<" invalid board size ["<<size<<"], it should be >=3 and <="<<MAX_BOARD_SIZE<<endl<<endl;
         }
         if(name=="clear_board") {

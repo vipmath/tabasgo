@@ -22,12 +22,24 @@
 #include <cstdint>
 
 #define MAX_BOARD_SIZE 19
+#define MAX_ARRAY_SIZE (MAX_BOARD_SIZE+1)*(MAX_BOARD_SIZE+2)
 
 class Board {
 
+public:
+    Board(unsigned int size=MAX_BOARD_SIZE) : size(size)
+    {
+        clear();
+    }
+
+    bool setSize(unsigned int size);
+    void clear();
+
 private:
-    uint8_t board[(MAX_BOARD_SIZE+1)*(MAX_BOARD_SIZE+2)];
+    uint8_t board[MAX_ARRAY_SIZE];
+    unsigned int size;
 };
 
+extern Board position;
 
 #endif //TABASGO_BOARD_H
