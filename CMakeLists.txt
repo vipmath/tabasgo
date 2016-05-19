@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(tabasgo)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3 -static")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3")
 
 ## MinGW static linking
 if(MINGW)
